@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import PokemonThumnail from "./components/PokemonThumnail";
 
 function App() {
 
@@ -33,7 +34,15 @@ function App() {
       <h1>Pokemon Evolution</h1>
       <div className="pokemon-container">
         <div className="all-container">
-          {allPokemons.map(pokemon => <li>{pokemon.name}</li>)}
+          { allPokemons.map((pokemon, index) => 
+            <PokemonThumnail
+            id={pokemon.id}
+            name={pokemon.name}
+            image={pokemon.sprites.other.dream_world.front_default}
+            type={pokemon.types[0].type.name}
+            key={index}
+            />
+          )}
         </div>
         <button className="load-more">Load more</button>
       </div>

@@ -1,8 +1,10 @@
 import React from 'react'
 
 const PokemonThumnail = ({ id, name, image, type}) => {
+
+    const style = `thumb-container ${type}`
     return (  
-        <div className="thumb-container">
+        <div className={style}>
             <div className="number">
                 <small>#0{id}</small>
             </div>
@@ -11,7 +13,6 @@ const PokemonThumnail = ({ id, name, image, type}) => {
                 <h3>{name}</h3>
                 <small>Type: {type}</small>
             </div>
-
         </div>
     );
 }
